@@ -1,0 +1,14 @@
+{
+  "name": "ts-node-api-architecture-tutorial",
+  "version": "0.0.1",
+  "description": "Tutorial to learn API architecture using node",
+  "main": "handler.js",
+  "repository": "https://github.com/twydev/ts-node-api-architecture-tutorial.git",
+  "author": "twydev <39231273+twydev@users.noreply.github.com>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@types/node": "^14.0.6",
+    "typescript": "^3.9.3"
+  }
+}
