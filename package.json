@@ -1,0 +1,22 @@
+{
+  "name": "ts-node-api-architecture-tutorial",
+  "version": "0.0.1",
+  "description": "Tutorial to learn API architecture using node",
+  "main": "handler.js",
+  "repository": "https://github.com/twydev/ts-node-api-architecture-tutorial.git",
+  "author": "twydev <39231273+twydev@users.noreply.github.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "rimraf ./build && tsc",
+    "start": "yarn run build && node build/handler.js",
+    "start:dev": "nodemon"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.6",
+    "nodemon": "^2.0.4",
+    "rimraf": "^3.0.2",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.3"
+  }
+}
