@@ -10,13 +10,17 @@
   "scripts": {
     "build": "rimraf ./build && tsc --project tsconfig.prod.json",
     "start": "yarn run build && node build/handler.js",
-    "start:dev": "nodemon"
+    "start:dev": "nodemon",
+    "test:int": "jest --config jest.int.config.json",
+    "test:unit": "jest --config jest.unit.config.json"
   },
   "devDependencies": {
+    "@types/jest": "^25.2.3",
     "@types/node": "^14.0.6",
     "jest": "^26.0.1",
     "nodemon": "^2.0.4",
     "rimraf": "^3.0.2",
+    "ts-jest": "^26.1.0",
     "ts-node": "^8.10.2",
     "typescript": "^3.9.3"
   }
