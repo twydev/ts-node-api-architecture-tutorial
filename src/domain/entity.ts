@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 // TODO: add domain events
 // import { EventEmitter } from 'events'; // NodeJS built-in library
 
-// decision: use of abstract class instead of interface because:
+// Decision: use of abstract class instead of interface because:
 //   1. we want to define method implementation and attributes common to all sub-classes.
 //   2. we should never instantiate the base class
 
