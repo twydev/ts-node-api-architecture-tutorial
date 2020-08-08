@@ -8,9 +8,13 @@ import { v4 as uuidv4 } from "uuid";
 //   2. we should never instantiate the base class
 
 export abstract class Entity {
-  protected readonly id: string; // protected access, so that sub-class instances can access it.
+  protected readonly _id: string; // protected access, so that sub-class instances can access it.
 
   constructor(id?: string) {
-    this.id = id ? id : uuidv4();
+    this._id = id ? id : uuidv4();
+  }
+
+  public get id(): string {
+    return this._id;
   }
 }
