@@ -9,8 +9,10 @@ describe("Account", () => {
     expect(Account.create({ balance: 1 }) instanceof Account).toBeTruthy();
   });
 
-  it("should return undefined when balance is negative", () => {
-    expect(Account.create({ balance: -1 })).toBeUndefined();
+  it("should throw error when balance is negative", () => {
+    expect(() => {
+      Account.create({ balance: -1 });
+    }).toThrowError();
   });
 
   it("should create new Account id when no id is provided", () => {

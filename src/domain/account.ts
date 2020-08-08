@@ -8,9 +8,10 @@ export interface CreateAccountParams {
 export class Account extends Entity {
   // Decision: use a factory-style static method to create entity to allow validation of params
   public static create(params: CreateAccountParams) {
-    if (Account.isValidBalance(params.balance))
-      return new Account(params.balance, params.id);
-    // TODO: need to handle invalid balance by throwing error
+    if (!Account.isValidBalance(params.balance))
+      throw new Error("Invalid Account balance!");
+
+    return new Account(params.balance, params.id);
   }
 
   public static isValidBalance(balance: number) {
