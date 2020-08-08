@@ -1,7 +1,7 @@
 {
   "bail": true,
   "roots": ["<rootDir>/src/"],
-  "testMatch": ["**/?(*.)+(spec|test).+(ts|tsx|js|jsx)"],
+  "testMatch": ["**/__test__/?(*.)+(spec|test).+(ts|tsx|js|jsx)"],
   "transform": {
     "^.+\\.(ts|tsx)$": "ts-jest"
   },
