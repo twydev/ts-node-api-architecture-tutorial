@@ -11,6 +11,6 @@ export abstract class Entity {
   protected readonly id: string; // protected access, so that sub-class instances can access it.
 
   constructor(id?: string) {
-    this.id = id ? id : uuidv4;
+    this.id = id ? id : uuidv4();
   }
 }

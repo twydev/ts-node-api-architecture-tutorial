@@ -25,6 +25,7 @@
     "typescript": "^3.9.3"
   },
   "dependencies": {
+    "@types/uuid": "^8.0.1",
     "uuid": "^8.3.0"
   }
 }
