@@ -1,8 +1,4 @@
-import {
-  LocalMemoryDb,
-  LocalMemoryDbInitParams,
-  LocalMemoryDbResponse,
-} from "../localMemory";
+import { LocalMemoryDb, LocalMemoryDbInitParams } from "../localMemory";
 
 describe("LocalMemory", () => {
   it("should initialize successfully", () => {
