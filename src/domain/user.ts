@@ -1,10 +1,16 @@
 import { Entity } from "./entity";
-import { Account } from "./account";
+import { Account, UnmarshalledAccount } from "./account";
 
 export interface CreateUserParams {
   id?: string;
   username: string;
   accounts?: Account[];
+}
+
+export interface UnmarshalledUser {
+  id: string;
+  username: string;
+  accounts: UnmarshalledAccount[];
 }
 
 export class User extends Entity {
@@ -42,6 +48,16 @@ export class User extends Entity {
 
   public addAccount(account: Account) {
     this._accounts.push(account);
+  }
+
+  public unmarshall(): UnmarshalledUser {
+    return {
+      id: this.id,
+      username: this._username,
+      accounts: this._accounts.map((account) => {
+        return account.unmarshall();
+      }),
+    };
   }
 
   // Decision: constructor is private to prevent unsafe creation of invalid Account states

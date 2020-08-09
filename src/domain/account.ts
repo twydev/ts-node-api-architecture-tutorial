@@ -5,6 +5,11 @@ export interface CreateAccountParams {
   balance: number;
 }
 
+export interface UnmarshalledAccount {
+  id: string;
+  balance: number;
+}
+
 export class Account extends Entity {
   // Decision: use a factory-style static method to create entity to allow validation of params
   public static create(params: CreateAccountParams) {
@@ -20,6 +25,17 @@ export class Account extends Entity {
 
   public get balance(): number {
     return this._balance;
+  }
+
+  public deposit(amount: number) {
+    this._balance += amount;
+  }
+
+  public unmarshall(): UnmarshalledAccount {
+    return {
+      id: this.id,
+      balance: this._balance,
+    };
   }
 
   // Decision: constructor is private to prevent unsafe creation of invalid Account states
